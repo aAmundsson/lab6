@@ -41,7 +41,7 @@ public class BinarySearchTree<E> {
 	    
  		canvas.drawTree(bst1);
  		bst1.printTree();
- 		
+ 		bst1.height();
  	}
 
 
@@ -99,21 +99,13 @@ public class BinarySearchTree<E> {
 			return 0;
 		}
 		else {
-			int left = 0, right = 0;  
-			  
-            if(n.left != null)  
-                left = 1 + height(n.left);  
-  
-            //Calculate the height of right subtree  
-            if(n.right != null)  
-                right = 1 + height(n.right);  
-  
+
             //Compare height of left subtree and right subtree  
             //and store maximum of two in variable max  
-            int max = Math.max(left,  right);  
+            int max = 1 + Math.max(height(n.left),  height(n.right));  
   
             //Calculate the total height of tree by adding height of root  
-            return (max + 1);  
+            return (max);  
         }  
      }  
 	/**
@@ -129,6 +121,7 @@ public class BinarySearchTree<E> {
 	 */
 	public void clear() {
 		root = null;
+		size = 0;
 	}
 	
 	/**
@@ -196,3 +189,4 @@ public class BinarySearchTree<E> {
 	}
 	
 }
+
