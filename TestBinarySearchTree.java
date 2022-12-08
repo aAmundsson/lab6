@@ -32,6 +32,42 @@ class TestBinarySearchTree {
 		intTree.add(3);
 		intTree.add(9);
 		intTree.add(4);
+		assertTrue(intTree.add(2));
+		assertFalse(intTree.add(2));
+		
+	}
+	
+	@Test
+	void testHeight() {
+		intTree.add(5);
+		intTree.add(2);
+		intTree.add(3);
+		intTree.add(6);
+		intTree.add(8);
+		intTree.add(7);
+		
+
+		assertEquals(intTree.height(), 3);
+	}
+	
+	@Test
+	void testSize() {
+		intTree.add(1);
+		intTree.add(3);
+		intTree.add(9);
+		intTree.add(4);
+		assertEquals(intTree.size(), 4);
+	}
+	
+	@Test
+	void testClear() {
+		intTree.add(1);
+		intTree.add(3);
+		intTree.add(9);
+		intTree.add(4);
+		intTree.clear();
+		assertTrue(intTree.height() == 0);
+		assertTrue(intTree.size() == 0);
 		
 	}
 
